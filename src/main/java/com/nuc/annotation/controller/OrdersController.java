@@ -22,23 +22,8 @@ public class OrdersController {
 
     @GetMapping("/{id}")
     @ResponseBody
-    public Orders getOrders(@PathVariable("id")Integer oid){
-       return ordersService.getOrdersByOid(oid);
+    public Orders getOrders(@PathVariable("id") Integer oid) {
+        return ordersService.getOrdersByOid(oid);
     }
 
-    @GetMapping("/insert")
-    @ResponseBody
-    //insert into orders(oid,user_id,number,createtime,note,order_name)" +
-    //            "values (#{oid},#{uid},#{number},#{createTime},#{note},#{orderName})
-    public Orders insert(){
-        Orders orders = new Orders();
-        orders.setOid(null);
-        orders.setUid(36);
-        orders.setNumber(13);
-        orders.setCreateTime("2021-3-5");
-        orders.setNote("五毛钱");
-        orders.setOrderName("小布丁");
-        ordersService.insert(orders);
-        return orders;
-    }
 }
